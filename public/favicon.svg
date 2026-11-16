@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" fill="#EDEAE3"/>
+  <rect x="2" y="2" width="60" height="60" fill="none" stroke="#121110" stroke-width="4"/>
+  <!-- Monogram A, set as a condensed slab: the mark used across the paper. -->
+  <path d="M14 50 32 12l18 38" fill="none" stroke="#121110" stroke-width="8" stroke-linecap="butt" stroke-linejoin="miter"/>
+  <path d="M22 38h20" fill="none" stroke="#FF4D1C" stroke-width="7" stroke-linecap="butt"/>
+</svg>

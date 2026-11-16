@@ -1,0 +1,390 @@
+@import 'tailwindcss';
+
+/* ========================================================================== */
+/*  DESIGN TOKENS — BRUTALIST BROADSHEET                                      */
+/*                                                                            */
+/*  The page is set like a two-colour newspaper front page: newsprint stock,  */
+/*  black ink, one acid second ink, and rules doing the work that cards and   */
+/*  shadows do elsewhere. Nothing floats; everything is ruled.                */
+/* ========================================================================== */
+
+@theme {
+  /* --- Stock ------------------------------------------------------------ */
+  --color-paper: #edeae3;
+  --color-paper-2: #e4e0d5;
+  --color-paper-3: #d7d2c4;
+
+  /* --- Ink -------------------------------------------------------------- */
+  --color-ink: #121110;
+  --color-ink-2: #55504a;
+  --color-ink-3: #8b8578;
+
+  /* --- Rules ------------------------------------------------------------ */
+  --color-rule: #1a1816;
+  --color-rule-soft: rgba(18, 17, 16, 0.16);
+
+  /* --- Second ink: vermilion -------------------------------------------- */
+  --color-acid: #ff4d1c;
+  --color-acid-ink: #ffffff;
+  --color-acid-wash: rgba(255, 77, 28, 0.12);
+
+  /* --- Type ------------------------------------------------------------- */
+  --font-sans: 'Archivo', ui-sans-serif, system-ui, 'Segoe UI', sans-serif;
+  --font-display: 'Archivo', 'Haettenschweiler', 'Arial Narrow', sans-serif;
+  --font-editorial: 'Instrument Serif', 'Iowan Old Style', Georgia, serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* Nothing is rounded. A newspaper has no rounded corners. */
+  --radius-chip: 0px;
+  --radius-panel: 0px;
+}
+
+/* -------------------------------------------------------------------------- */
+/*  NIGHT EDITION                                                             */
+/*  The same front page run with the inks reversed. Tailwind v4 utilities     */
+/*  resolve to `var(--color-*)`, so overriding the variables re-inks the      */
+/*  whole page without a second set of classes.                               */
+/* -------------------------------------------------------------------------- */
+
+[data-theme='night'] {
+  --color-paper: #121110;
+  --color-paper-2: #1b1917;
+  --color-paper-3: #272421;
+
+  --color-ink: #f2efe7;
+  --color-ink-2: #a39c8e;
+  --color-ink-3: #706a60;
+
+  --color-rule: #efece4;
+  --color-rule-soft: rgba(242, 239, 231, 0.2);
+
+  --color-acid: #ff6136;
+  --color-acid-ink: #140703;
+  --color-acid-wash: rgba(255, 97, 54, 0.16);
+}
+
+/* ========================================================================== */
+/*  BASE                                                                      */
+/* ========================================================================== */
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    font-synthesis-weight: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* The front page is a fixed composition: it never scrolls. */
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+
+  #root {
+    /* dvh so mobile browser chrome does not clip the bottom rule. */
+    height: 100dvh;
+    width: 100%;
+  }
+
+  ::selection {
+    background: var(--color-acid);
+    color: var(--color-acid-ink);
+  }
+
+  /* Focus is a printed registration box, not a soft glow. */
+  :focus-visible {
+    outline: 2px solid var(--color-acid);
+    outline-offset: 1px;
+  }
+
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  button {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-align: left;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  p {
+    margin: 0;
+  }
+
+  ul,
+  ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}
+
+/* ========================================================================== */
+/*  PRESS FURNITURE                                                           */
+/* ========================================================================== */
+
+@layer components {
+  /* --- The column grid -------------------------------------------------- */
+  /* Ink bleeding through a 1px gap gives continuous column rules, the way a
+     front page separates its stories. Panels share rules; none is a card. */
+  .press-grid {
+    background-color: var(--color-rule);
+    gap: 1px;
+  }
+
+  /* --- Masthead nameplate ----------------------------------------------- */
+  .nameplate {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-stretch: 62.5%;
+    letter-spacing: 0.012em;
+    text-transform: uppercase;
+    line-height: 0.86;
+  }
+
+  /* --- Headline: ultra-condensed, set tight ----------------------------- */
+  .headline {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-stretch: 62.5%;
+    text-transform: uppercase;
+    line-height: 0.84;
+    letter-spacing: -0.004em;
+  }
+
+  /* --- Deck / sub-headline ---------------------------------------------- */
+  .deck {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-stretch: 75%;
+    text-transform: uppercase;
+    line-height: 0.96;
+    letter-spacing: 0.002em;
+  }
+
+  /* --- The second voice: a serif italic against all that condensed sans -- */
+  .editorial {
+    font-family: var(--font-editorial);
+    font-weight: 400;
+    font-style: italic;
+    font-stretch: normal;
+    text-transform: none;
+    letter-spacing: -0.012em;
+  }
+
+  /* --- Slug line: the small mono metadata that labels every section ------ */
+  .slug {
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    line-height: 1;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-ink-3);
+  }
+
+  @media (min-width: 1280px) {
+    .slug {
+      font-size: 10px;
+    }
+  }
+
+  .slug-ink {
+    color: var(--color-ink-2);
+  }
+
+  /* --- A slug with a rule running out to the column edge ----------------- */
+  .slug-rule {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .slug-rule::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--color-rule-soft);
+  }
+
+  /* --- Byline: the mono technology list under a story -------------------- */
+  .byline {
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    line-height: 1.5;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--color-ink-3);
+  }
+
+  /* --- Stamped box: the one piece of furniture that is boxed ------------- */
+  .stamp {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    border: 1.5px solid var(--color-ink);
+    padding: 2px 5px;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  /* --- Scrollable region inside an overlay ------------------------------ */
+  .scroll-region {
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-ink-3) transparent;
+  }
+
+  .scroll-region::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .scroll-region::-webkit-scrollbar-track {
+    background: var(--color-paper-2);
+    border-left: 1px solid var(--color-rule-soft);
+  }
+
+  .scroll-region::-webkit-scrollbar-thumb {
+    background: var(--color-ink);
+  }
+}
+
+/* ========================================================================== */
+/*  VARIANTS                                                                  */
+/* ========================================================================== */
+
+/* The composition is viewport-locked, so height is as much a breakpoint as
+   width. `short:` trims optional furniture on laptops under ~780px tall. */
+@custom-variant short (@media (max-height: 780px));
+@custom-variant very-short (@media (max-height: 680px));
+@custom-variant night ([data-theme='night'] &);
+
+/* ========================================================================== */
+/*  UTILITIES                                                                 */
+/* ========================================================================== */
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@utility text-pretty {
+  text-wrap: pretty;
+}
+
+/* Newsprint tooth. A single tiled turbulence, multiplied over the stock. */
+@utility grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+/* The halftone screen behind the identity plate. */
+@utility halftone {
+  background-image: radial-gradient(var(--color-ink-3) 0.8px, transparent 0.85px);
+  background-size: 4.5px 4.5px;
+  opacity: 0.3;
+}
+
+/* A hand-drawn-looking rule used under section headings. */
+@utility rule-heavy {
+  border-top: 2.5px solid var(--color-ink);
+}
+
+@utility clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@utility clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@utility clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ========================================================================== */
+/*  MOTION                                                                    */
+/* ========================================================================== */
+
+@keyframes blink-dot {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0.15;
+  }
+}
+
+.status-dot {
+  animation: blink-dot 1.6s steps(1, end) infinite;
+}
+
+/* The acid underline that wipes in under a link on hover. */
+@utility wipe {
+  background-image: linear-gradient(var(--color-acid), var(--color-acid));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 2px;
+  transition: background-size 260ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .status-dot {
+    animation: none;
+    opacity: 1;
+  }
+}

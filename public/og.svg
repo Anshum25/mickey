@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M28 0H0V28" fill="none" stroke="#121110" stroke-opacity="0.028" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="bloom" cx="0%" cy="100%" r="110%">
+      <stop offset="0%" stop-color="#FF4D1C" stop-opacity="0.07"/>
+      <stop offset="58%" stop-color="#FF4D1C" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="rightwash" cx="78%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#FF4D1C" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#FF4D1C" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Stock -->
+  <rect width="1200" height="630" fill="#EDEAE3"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="630" fill="url(#bloom)"/>
+
+  <!-- Masthead: nameplate closed by a double rule -->
+  <text x="64" y="74" font-family="Haettenschweiler, Impact, Arial Narrow Bold, Segoe UI Black, sans-serif" font-size="56" letter-spacing="1" fill="#121110">ANSHUM DEV</text>
+  <text x="292" y="74" font-family="Haettenschweiler, Impact, Arial Narrow Bold, Segoe UI Black, sans-serif" font-size="56" fill="#FF4D1C">.</text>
+  <text x="1136" y="52" text-anchor="end" font-family="Consolas, Menlo, monospace" font-size="13" letter-spacing="2" fill="#8B8578">VOL. 03 · NO. 01</text>
+  <text x="1136" y="74" text-anchor="end" font-family="Consolas, Menlo, monospace" font-size="13" letter-spacing="2" fill="#55504A">AHMEDABAD, IN · IST</text>
+  <rect x="0" y="96" width="1200" height="5" fill="#121110"/>
+  <rect x="0" y="106" width="1200" height="1.5" fill="#121110"/>
+
+  <!-- Column rule -->
+  <rect x="712" y="107" width="1.5" height="459" fill="rgba(18,17,16,0.16)"/>
+
+  <!-- The plate -->
+  <g>
+    <ellipse cx="946" cy="300" rx="249.64000000000001" ry="64.9064" fill="none" stroke="#121110" stroke-opacity="0.18" stroke-width="1.6" transform="rotate(-24 946 300)"/>
+    <ellipse cx="946" cy="300" rx="290.72" ry="104.65920000000001" fill="none" stroke="#121110" stroke-opacity="0.1" stroke-width="1.6" transform="rotate(-7 946 300)"/>
+      <line x1="866.9" y1="272.9" x2="970.1" y2="353.6" stroke="#121110" stroke-opacity="0.266" stroke-width="1.68" stroke-linecap="round"/>
+      <line x1="992.0" y1="224.2" x2="970.1" y2="353.6" stroke="#121110" stroke-opacity="0.272" stroke-width="1.70" stroke-linecap="round"/>
+      <line x1="992.0" y1="224.2" x2="866.9" y2="272.9" stroke="#121110" stroke-opacity="0.294" stroke-width="1.79" stroke-linecap="round"/>
+      <line x1="856.0" y1="405.4" x2="970.1" y2="353.6" stroke="#121110" stroke-opacity="0.350" stroke-width="2.00" stroke-linecap="round"/>
+      <line x1="970.1" y1="353.6" x2="1087.6" y2="317.2" stroke="#121110" stroke-opacity="0.359" stroke-width="2.03" stroke-linecap="round"/>
+      <line x1="866.9" y1="272.9" x2="856.0" y2="405.4" stroke="#121110" stroke-opacity="0.373" stroke-width="2.09" stroke-linecap="round"/>
+      <line x1="992.0" y1="224.2" x2="1087.6" y2="317.2" stroke="#121110" stroke-opacity="0.388" stroke-width="2.14" stroke-linecap="round"/>
+      <line x1="1003.3" y1="449.0" x2="970.1" y2="353.6" stroke="#121110" stroke-opacity="0.408" stroke-width="2.22" stroke-linecap="round"/>
+      <line x1="889.9" y1="154.2" x2="866.9" y2="272.9" stroke="#121110" stroke-opacity="0.418" stroke-width="2.26" stroke-linecap="round"/>
+      <line x1="889.9" y1="154.2" x2="992.0" y2="224.2" stroke="#121110" stroke-opacity="0.424" stroke-width="2.28" stroke-linecap="round"/>
+      <line x1="866.9" y1="272.9" x2="781.0" y2="280.0" stroke="#121110" stroke-opacity="0.467" stroke-width="2.45" stroke-linecap="round"/>
+      <line x1="992.0" y1="224.2" x2="1054.3" y2="173.1" stroke="#121110" stroke-opacity="0.482" stroke-width="2.50" stroke-linecap="round"/>
+      <line x1="1003.3" y1="449.0" x2="856.0" y2="405.4" stroke="#121110" stroke-opacity="0.514" stroke-width="2.63" stroke-linecap="round"/>
+      <line x1="1003.3" y1="449.0" x2="1087.6" y2="317.2" stroke="#121110" stroke-opacity="0.524" stroke-width="2.66" stroke-linecap="round"/>
+      <line x1="856.0" y1="405.4" x2="781.0" y2="280.0" stroke="#121110" stroke-opacity="0.551" stroke-width="2.77" stroke-linecap="round"/>
+      <line x1="1054.3" y1="173.1" x2="1087.6" y2="317.2" stroke="#121110" stroke-opacity="0.569" stroke-width="2.84" stroke-linecap="round"/>
+      <line x1="889.9" y1="154.2" x2="781.0" y2="280.0" stroke="#121110" stroke-opacity="0.596" stroke-width="2.94" stroke-linecap="round"/>
+      <line x1="889.9" y1="154.2" x2="1054.3" y2="173.1" stroke="#121110" stroke-opacity="0.606" stroke-width="2.98" stroke-linecap="round"/>
+      <line x1="872.1" y1="421.9" x2="856.0" y2="405.4" stroke="#121110" stroke-opacity="0.638" stroke-width="3.10" stroke-linecap="round"/>
+      <line x1="1075.8" y1="344.6" x2="1087.6" y2="317.2" stroke="#121110" stroke-opacity="0.653" stroke-width="3.16" stroke-linecap="round"/>
+      <line x1="872.1" y1="421.9" x2="1003.3" y2="449.0" stroke="#121110" stroke-opacity="0.696" stroke-width="3.32" stroke-linecap="round"/>
+      <line x1="1003.3" y1="449.0" x2="1075.8" y2="344.6" stroke="#121110" stroke-opacity="0.702" stroke-width="3.34" stroke-linecap="round"/>
+      <line x1="889.9" y1="154.2" x2="902.8" y2="204.0" stroke="#121110" stroke-opacity="0.712" stroke-width="3.38" stroke-linecap="round"/>
+      <line x1="872.1" y1="421.9" x2="781.0" y2="280.0" stroke="#121110" stroke-opacity="0.732" stroke-width="3.46" stroke-linecap="round"/>
+      <line x1="1054.3" y1="173.1" x2="1075.8" y2="344.6" stroke="#121110" stroke-opacity="0.747" stroke-width="3.52" stroke-linecap="round"/>
+      <line x1="781.0" y1="280.0" x2="902.8" y2="204.0" stroke="#121110" stroke-opacity="0.761" stroke-width="3.57" stroke-linecap="round"/>
+      <line x1="1054.3" y1="173.1" x2="902.8" y2="204.0" stroke="#121110" stroke-opacity="0.770" stroke-width="3.61" stroke-linecap="round"/>
+      <line x1="872.1" y1="421.9" x2="1075.8" y2="344.6" stroke="#121110" stroke-opacity="0.826" stroke-width="3.82" stroke-linecap="round"/>
+      <line x1="872.1" y1="421.9" x2="902.8" y2="204.0" stroke="#121110" stroke-opacity="0.848" stroke-width="3.91" stroke-linecap="round"/>
+      <line x1="1075.8" y1="344.6" x2="902.8" y2="204.0" stroke="#121110" stroke-opacity="0.854" stroke-width="3.93" stroke-linecap="round"/>
+      <circle cx="970.1" cy="353.6" r="2.3" fill="#121110" fill-opacity="0.321"/>
+      <circle cx="866.9" cy="272.9" r="2.6" fill="#121110" fill-opacity="0.364"/>
+      <circle cx="992.0" cy="224.2" r="2.6" fill="#121110" fill-opacity="0.374"/>
+      <circle cx="856.0" cy="405.4" r="3.4" fill="#121110" fill-opacity="0.523"/>
+      <circle cx="1087.6" cy="317.2" r="3.5" fill="#121110" fill-opacity="0.540"/>
+      <circle cx="889.9" cy="154.2" r="3.9" fill="#121110" fill-opacity="0.609"/>
+      <circle cx="1003.3" cy="449.0" r="4.1" fill="#121110" fill-opacity="0.631"/>
+      <circle cx="781.0" cy="280.0" r="4.4" fill="#121110" fill-opacity="0.700"/>
+      <circle cx="1054.3" cy="173.1" r="14.1" fill="#FF4D1C" fill-opacity="0.005"/><circle cx="1054.3" cy="173.1" r="4.5" fill="#121110" fill-opacity="0.717"/>
+      <circle cx="872.1" cy="421.9" r="16.6" fill="#FF4D1C" fill-opacity="0.048"/><circle cx="872.1" cy="421.9" r="5.4" fill="#FF4D1C" fill-opacity="0.855"/>
+      <circle cx="1075.8" cy="344.6" r="16.8" fill="#FF4D1C" fill-opacity="0.051"/><circle cx="1075.8" cy="344.6" r="5.4" fill="#FF4D1C" fill-opacity="0.876"/>
+      <circle cx="902.8" cy="204.0" r="17.5" fill="#FF4D1C" fill-opacity="0.064"/><circle cx="902.8" cy="204.0" r="5.7" fill="#FF4D1C" fill-opacity="0.957"/>
+  </g>
+  <text x="946" y="500" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="12" letter-spacing="2" fill="#8B8578">FIG. 1 — ICO. 12V / 30E</text>
+
+  <!-- Kicker -->
+  <text x="64" y="150" font-family="Consolas, Menlo, monospace" font-size="13" letter-spacing="2.4" fill="#FF4D1C">00 —</text>
+  <text x="112" y="150" font-family="Consolas, Menlo, monospace" font-size="13" letter-spacing="2.4" fill="#55504A">AI ENGINEER &amp; SOFTWARE ENGINEER</text>
+
+  <!-- Headline -->
+  <text x="62" y="240" font-family="Haettenschweiler, Impact, Arial Narrow Bold, Segoe UI Black, sans-serif" font-size="96" letter-spacing="0" fill="#121110">ENGINEERING</text>
+  <text x="62" y="334" font-family="Georgia, Times New Roman, serif" font-size="104" font-style="italic" letter-spacing="-2" fill="#FF4D1C">Intelligent</text>
+  <text x="62" y="424" font-family="Haettenschweiler, Impact, Arial Narrow Bold, Segoe UI Black, sans-serif" font-size="96" letter-spacing="0" fill="#121110">SYSTEMS.</text>
+
+  <!-- Deck -->
+  <rect x="64" y="456" width="600" height="2" fill="#121110"/>
+  <text x="64" y="488" font-family="Segoe UI Semibold, Segoe UI, Arial, sans-serif" font-size="19" fill="#121110">I'M ANSHUM DEV.</text>
+  <text x="235" y="488" font-family="Segoe UI, Arial, sans-serif" font-size="19" fill="#55504A">Building AI-powered products,</text>
+  <text x="64" y="516" font-family="Segoe UI, Arial, sans-serif" font-size="19" fill="#55504A">scalable backend systems, and intelligent enterprise automation.</text>
+
+  <!-- Colophon -->
+  <rect x="0" y="560" width="1200" height="2.5" fill="#121110"/>
+  <rect x="0" y="562.5" width="1200" height="67.5" fill="#E4E0D5"/>
+  <text x="64" y="604" font-family="Consolas, Menlo, monospace" font-size="14" letter-spacing="1.6" fill="#55504A">ANSHUM25506@GMAIL.COM</text>
+  <text x="600" y="604" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="16" font-style="italic" fill="#8B8578">“There is so much left to build.”</text>
+  <text x="1136" y="604" text-anchor="end" font-family="Consolas, Menlo, monospace" font-size="14" letter-spacing="1.6" fill="#8B8578">GITHUB.COM/ANSHUM25</text>
+</svg>
